@@ -69,3 +69,40 @@
   justify-content: center;
   align-items: center;
 }
+
+/*Header*/
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-content p {
+  color: orange;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333; /
+}
+
+.logo-img {
+  height: 80px;
+  margin-right: 10px;
+}
+
+.site-logo p {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
