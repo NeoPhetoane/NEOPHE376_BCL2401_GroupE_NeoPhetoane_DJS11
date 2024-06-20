@@ -1,23 +1,14 @@
-/* sidebar */
-
-.sidebar {
-  height: 80px;
-  width: 80px;
-  background-color: #f04907;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* Sidebar */
 
 .menu-bars {
   margin-left: 0;
   font-size: 2rem;
   background: none;
+  color: orange
 }
 .nav-menu {
   background-color: rgb(33, 190, 33);
-  width: 250px;
+  width: 240px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -34,8 +25,6 @@
 
 .nav-text {
   display: flex;
-  justify-content: start;
-  align-items: center;
   padding: 8px 0px 8px 16px;
   list-style: none;
   height: 60px;
@@ -62,12 +51,12 @@
 }
 
 .navbar-toggle {
-  background-color: #e26d06;
   width: 80px;
   height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content:center ;
   align-items: center;
+
 }
 
 /*Header*/
@@ -104,4 +93,84 @@
   font-size: 1.5em;
   font-weight: bold;
   margin: 0;
+}
+
+
+/*Podcast display styling*/
+
+/* General container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styling for the header */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+/* Styling for the list of posts */
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styling for each card */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px orange;
+  overflow: hidden;
+  width: calc(16.666% - 20px);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Image styling */
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Card content styling */
+.card-content {
+  padding: 15px;
+
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit; 
+}
+
+h1 {
+  color: rgb(33, 190, 33);
+
+}
+.card-content h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+
+}
+
+.card-content p {
+  margin: 0 0 10px;
+  color: #555;
+}
+
+.card-content p:last-child {
+  margin-bottom: 0;
 }
