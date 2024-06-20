@@ -13,7 +13,7 @@ function Seasons() {
           throw new Error("Failed to fetch seasons.");
         }
         const data = await response.json();
-        setSeasons(data.seasons); // Assuming data has a 'seasons' property which is an array
+        setSeasons(data.seasons);
       } catch (error) {
         setError(error.message);
       }

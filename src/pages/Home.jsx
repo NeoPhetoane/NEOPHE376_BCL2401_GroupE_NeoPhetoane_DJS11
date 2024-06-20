@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import GenreTitles from "../utils/GenreTitles";
 
 //Function to cut the discription length
 function TruncateText({ text, maxLength }) {
@@ -73,7 +74,7 @@ function Home() {
                         <img src={post.image} />
                         <TruncateText text={post.description} maxLength={150}/>
                         <p>Seasons: {post.seasons}</p>
-                        <p>Genre: {post.genres}</p>
+                        <p>Genres: {post.genres.map(genre => GenreTitles[genre]).join(', ')}</p>
                         <p>Last Updated: {formatUpdatedDate (post.updated)}</p>
                     </Link>
                 </li>
