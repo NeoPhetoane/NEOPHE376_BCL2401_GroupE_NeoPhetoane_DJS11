@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
 import Header from "./components/Header";
-
+import Seasons from "./pages/Seasons";
 
 function App() {
   return (
@@ -12,10 +12,10 @@ function App() {
       <Header />
 
       <Routes>
-        
-          <Route path="/" element={<Home />} />
-          <Route path="/Search" element={<Search />} />
-          <Route path="/Favorites" element={<Favorites />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/seasons/:id" element={<Seasons />} />
+        <Route path="/Search" element={<Search />} />
+        <Route path="/Favorites" element={<Favorites />} />
       </Routes>
     </BrowserRouter>
   );
