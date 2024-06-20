@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+
+
 function Seasons() {
   const { id } = useParams();
   const [seasons, setSeasons] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchSeasons = async () => {
+        setLoading(true);
       try {
         const response = await fetch(`https://podcast-api.netlify.app/id/${id}`);
         if (!response.ok) {
@@ -16,6 +20,8 @@ function Seasons() {
         setSeasons(data.seasons);
       } catch (error) {
         setError(error.message);
+      }  finally {
+        setLoading(false);
       }
     };
 
@@ -25,7 +31,9 @@ function Seasons() {
   return (
     <>
       <h1>Seasons</h1>
-      {error ? (
+      {loading ? (
+        <h2>Loading...</h2>
+      ) : error ? (
         <div className="error-message">
           <p>Error: {error}</p>
         </div>
