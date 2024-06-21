@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
-
 function Seasons() {
   const { id } = useParams();
   const [seasons, setSeasons] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchSeasons = async () => {
-        setLoading(true);
+      setLoading(true);
       try {
-        const response = await fetch(`https://podcast-api.netlify.app/id/${id}`);
+        const response = await fetch(
+          `https://podcast-api.netlify.app/id/${id}`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch seasons.");
         }
@@ -20,7 +21,7 @@ function Seasons() {
         setSeasons(data.seasons);
       } catch (error) {
         setError(error.message);
-      }  finally {
+      } finally {
         setLoading(false);
       }
     };
@@ -41,7 +42,7 @@ function Seasons() {
         <div className="season-card">
           {seasons.map((season) => (
             <div key={season.id} className="card">
-              <Link to={`/episodes/${season.id}`} className="card-link">
+              <Link to={`/seasons/${season.id}`} className="card-link">
                 <h2>{season.title}</h2>
                 <img src={season.image} alt={season.title} />
                 <p>{season.description}</p>

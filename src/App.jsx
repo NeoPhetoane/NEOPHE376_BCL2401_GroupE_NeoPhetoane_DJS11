@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import Favorites from "./pages/Favorites";
 import Header from "./components/Header";
 import Seasons from "./pages/Seasons";
 import MediaPlayer from "./components/MediaPlayer";
+import EpisodesList from "./pages/EpisodesList";
 
 function App() {
   return (
@@ -15,8 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/seasons/:id" element={<Seasons />} />
+        <Route path="/episodes/:id" element={<EpisodesList />} />
         <Route path="/Search" element={<Search />} />
-        <Route path="/Favorites" element={<Favorites />} />
+        {/* <Route path="/Favorites" element={<Favorites />} /> */}
       </Routes>
     </BrowserRouter>
   );
