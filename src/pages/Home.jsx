@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import GenreTitles from "../utils/GenreTitles";
+import { MdFavoriteBorder} from "react-icons/md";
+
 
 //Function to cut the discription length
 function TruncateText({ text, maxLength }) {
@@ -76,6 +78,7 @@ function Home() {
                         <p>Seasons: {post.seasons}</p>
                         <p>Genres: {post.genres.map(genre => GenreTitles[genre]).join(', ')}</p>
                         <p>Last Updated: {formatUpdatedDate (post.updated)}</p>
+                        <p><MdFavoriteBorder /></p>
                     </Link>
                 </li>
           ))}
