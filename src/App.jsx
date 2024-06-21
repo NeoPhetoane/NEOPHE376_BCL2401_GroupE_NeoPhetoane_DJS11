@@ -5,12 +5,13 @@ import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
 import Header from "./components/Header";
 import Seasons from "./pages/Seasons";
+import MediaPlayer from "./components/MediaPlayer";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-
+      <MediaPlayer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/seasons/:id" element={<Seasons />} />

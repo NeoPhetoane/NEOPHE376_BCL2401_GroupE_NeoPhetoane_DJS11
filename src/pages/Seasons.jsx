@@ -38,13 +38,14 @@ function Seasons() {
           <p>Error: {error}</p>
         </div>
       ) : (
-        <div>
+        <div className="season-card">
           {seasons.map((season) => (
             <div key={season.id} className="card">
               <Link to={`/episodes/${season.id}`} className="card-link">
                 <h2>{season.title}</h2>
                 <img src={season.image} alt={season.title} />
                 <p>{season.description}</p>
+                <p>Number of Episodes: {season.episodes.length}</p>
               </Link>
             </div>
           ))}
