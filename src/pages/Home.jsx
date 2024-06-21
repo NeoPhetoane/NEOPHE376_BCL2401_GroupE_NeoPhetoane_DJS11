@@ -78,7 +78,7 @@ function Home() {
                         <p>Seasons: {post.seasons}</p>
                         <p>Genres: {post.genres.map(genre => GenreTitles[genre]).join(', ')}</p>
                         <p>Last Updated: {formatUpdatedDate (post.updated)}</p>
-                        <p><MdFavoriteBorder /></p>
+                        <button  onClick={() => handleAddToFavorites(post)}><MdFavoriteBorder /></button>
                     </Link>
                 </li>
           ))}

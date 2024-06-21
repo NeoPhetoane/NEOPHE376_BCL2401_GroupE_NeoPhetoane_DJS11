@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { MdFavoriteBorder} from "react-icons/md";
 
 function Seasons() {
   const { id } = useParams();
@@ -47,6 +48,7 @@ function Seasons() {
                 <img src={season.image} alt={season.title} />
                 <p>{season.description}</p>
                 <p>Number of Episodes: {season.episodes.length}</p>
+                <button  onClick={() => handleAddToFavorites(post)}><MdFavoriteBorder /></button>
               </Link>
             </div>
           ))}

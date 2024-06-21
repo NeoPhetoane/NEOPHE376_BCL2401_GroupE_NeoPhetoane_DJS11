@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { MdFavoriteBorder} from "react-icons/md";
 
 function EpisodesList() {
   const { id } = useParams();
@@ -39,6 +40,7 @@ function EpisodesList() {
                 <h2>{episode.title}</h2>
                 <img src={episode.seasonImage} alt={episode.title} />
                 <p>{episode.description}</p>
+                <button  onClick={() => handleAddToFavorites(post)}><MdFavoriteBorder /></button>
                 <audio controls>
                   <source src={episode.file} type="audio/mpeg" />
                   Your browser does not support the audio element.
